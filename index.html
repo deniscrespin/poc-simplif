@@ -166,24 +166,24 @@
             return text.replace(/[&<>"']/g, m => map[m]);
         }
 
-        // Fonction pour détecter si la page a été chargée via POST
-        function detectPostRequest() {
-            const postParamsDiv = document.getElementById('post-params');
+        // // Fonction pour détecter si la page a été chargée via POST
+        // function detectPostRequest() {
+        //     const postParamsDiv = document.getElementById('post-params');
 
-            // Vérifier si le formulaire a été soumis via POST
-            if (window.performance && window.performance.navigation.type === 1) {
-                // Type 1 = rechargement, peut indiquer un POST
-                postParamsDiv.innerHTML += '<p style="color: #667eea; font-weight: bold;">⚠️ La page semble avoir été rechargée (peut-être via POST)</p>';
-            }
+        //     // Vérifier si le formulaire a été soumis via POST
+        //     if (window.performance && window.performance.navigation.type === 1) {
+        //         // Type 1 = rechargement, peut indiquer un POST
+        //         postParamsDiv.innerHTML += '<p style="color: #667eea; font-weight: bold;">⚠️ La page semble avoir été rechargée (peut-être via POST)</p>';
+        //     }
 
-            // Note : JavaScript côté client ne peut pas accéder directement aux données POST
-            // Il faudrait que le serveur les injecte dans la page
-        }
+        //     // Note : JavaScript côté client ne peut pas accéder directement aux données POST
+        //     // Il faudrait que le serveur les injecte dans la page
+        // }
 
         // Exécuter au chargement de la page
         window.addEventListener('DOMContentLoaded', () => {
             displayGetParams();
-            detectPostRequest();
+            //detectPostRequest();
         });
     </script>
 </body>
